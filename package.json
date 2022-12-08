@@ -1,0 +1,31 @@
+{
+  "name": "sololearn-api",
+  "version": "1.0.0",
+  "description": "This is an api which has collected a data of 10k codes of sololearn.com with python web scrapping",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon . -e .js,.json,.hbs,.css,.js",
+    "start": "node ."
+  },
+  "keywords": [
+    "sololearn",
+    "scraping",
+    "api"
+  ],
+  "author": "Prathamesh Thorat",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "hbs": "^4.2.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PrathameshThorat1729/Sololearn-Code-API.git"
+  },
+  "bugs": {
+    "url": "https://github.com/PrathameshThorat1729/Sololearn-Code-API/issues"
+  },
+  "homepage": "https://github.com/PrathameshThorat1729/Sololearn-Code-API#readme"
+}

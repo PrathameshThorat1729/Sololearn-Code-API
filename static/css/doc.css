@@ -1,0 +1,188 @@
+/**********************************************************
+*
+* Sololearn Code API - A API to grab best codes from Sololearn
+* Copyright(C) 2022 - 2023 Prathamesh Thorat (thoratprathamesh1729@gmail.com)
+*
+* This software is provided 'as-is', without any express or implied warranty.
+* In no event will the authors be held liable for any damages arising from the use of this software.
+*
+* Permission is granted to anyone to use this software for any purpose,
+* including commercial applications, and to alter it and redistribute it freely,
+* subject to the following restrictions:
+*
+* 1. The origin of this software must not be misrepresented
+* you must not claim that you wrote the original software.
+* If you use this software in a product, an acknowledgment
+* in the product documentation would be appreciated but is not required.
+*
+* 2. Altered source versions must be plainly marked as such,
+* and must not be misrepresented as being the original software.
+*
+* 3. This notice may not be removed or altered from any source distribution.
+*
+***********************************************************/
+
+html {
+  scroll-behavior: smooth;
+}
+
+#box {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  background-color: #fff;
+}
+
+aside {
+  background-color: #ddd;
+  padding: 15px 10px;
+  margin: 10px;
+  border-radius: 5px;
+  width: min(200px, 40%);
+  position: relative;
+}
+
+aside h2 {
+  border-radius: 5px;
+  text-align: center;
+  background-color: #8400e2;
+  color: #fff;
+  padding: 5px;
+}
+
+aside ul {
+  width: 100%;
+  padding: 0;
+  background-color: #ddd;
+  list-style-type: none;
+  margin-top: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+aside ul li {
+  display: block;
+  padding: 5px 10px;
+  margin: 5px 0;
+  background-color: #fff;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+aside ul li:hover {
+  box-shadow: 0 0 5px #000;
+}
+
+#info_page {
+  background-color: #eee;
+  flex-grow: 1;
+  margin: 10px;
+  margin-left: 0;
+  height: 100%;
+  border-radius: 5px;
+  width: min(200px, 40%);
+}
+
+#info_page h1 {
+  background-color: #ddd;
+  border-radius: 5px 5px 0 0;
+  padding: 15px 7px;
+}
+
+#info_page h2 {
+  border-radius: 5px 5px 0 0;
+  padding: 10px 7px;
+}
+
+#info_page .endpoint {
+  margin: 20px 7px;
+  width: calc(100% - 14px);
+  position: relative;
+}
+
+#info_page .url_box {
+  display: flex;
+}
+
+#scroll_box {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 10px;
+}
+
+#scroller {
+  background-color: #9c33e8;
+  color: #fff;
+  padding: 5px 15px;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  transition: 0.3s;
+}
+
+#scroller:hover {
+  box-shadow: 0 0 10px #000;
+}
+
+#info_page .get {
+  background-color: green;
+  padding: 5px 10px;
+  text-transform: uppercase;
+  border-radius: 5px 0 0 5px;
+  color: #fff;
+  font-weight: 600;
+}
+
+#info_page .url {
+  font-family: "Courier New", Courier, monospace;
+  padding: 5px 10px;
+  background-color: #fff;
+  flex-grow: 1;
+  overflow-x: scroll;
+}
+
+#info_page p {
+  padding-top: 10px;
+}
+
+#info_page .sample_box .query {
+  font-family: "Courier New", Courier, monospace;
+  padding: 5px 10px;
+  margin: 10px 0;
+  background-color: #fff;
+  overflow-x: scroll;
+  width: calc(100% - 20px);
+}
+
+#info_page .sample_box .result {
+  font-family: "Courier New", Courier, monospace;
+  padding: 5px 10px;
+  margin: 10px 0;
+  background-color: #fff;
+  overflow: scroll;
+  width: calc(100% - 20px);
+  max-height: 240px;
+}
+
+#info_page hr {
+  margin: 20px 0;
+  height: 3px;
+  background-color: #9aa;
+  border-width: 0;
+}
+
+@media (max-width: 600px) {
+  #box {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  aside,
+  #info_page {
+    width: 95%;
+    margin: 10px 0;
+  }
+}

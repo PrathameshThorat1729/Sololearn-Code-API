@@ -1,0 +1,91 @@
+/**********************************************************
+*
+* Sololearn Code API - A API to grab best codes from Sololearn
+* Copyright(C) 2022 - 2023 Prathamesh Thorat (thoratprathamesh1729@gmail.com)
+*
+* This software is provided 'as-is', without any express or implied warranty.
+* In no event will the authors be held liable for any damages arising from the use of this software.
+*
+* Permission is granted to anyone to use this software for any purpose,
+* including commercial applications, and to alter it and redistribute it freely,
+* subject to the following restrictions:
+*
+* 1. The origin of this software must not be misrepresented
+* you must not claim that you wrote the original software.
+* If you use this software in a product, an acknowledgment
+* in the product documentation would be appreciated but is not required.
+*
+* 2. Altered source versions must be plainly marked as such,
+* and must not be misrepresented as being the original software.
+*
+* 3. This notice may not be removed or altered from any source distribution.
+*
+***********************************************************/
+
+#footer {
+  background-color: #8400e2;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 15px 0;
+}
+
+#footer #logo {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#footer #source {
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
+}
+
+#footer #source img {
+  height: 20px;
+  margin: 0 15px;
+  border-radius: 5px;
+}
+
+#footer #name {
+  color: #ddd;
+  font-weight: 700;
+  font-size: x-large;
+  text-align: center;
+  padding: 15px 0;
+  text-decoration: none;
+}
+
+#footer ul {
+  flex-grow: 1;
+  background-color: #8400e2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#footer ul li {
+  display: inline-block;
+  padding: 5px 15px;
+  color: #fff;
+  border-radius: 5px;
+  transition: 0.3s;
+  margin: 5px 0;
+  font-weight: 600;
+}
+
+#footer ul li:hover {
+  background-color: #ffffff33;
+}
+
+@media (max-width: 400px) {
+  #footer {
+    flex-direction: column;
+  }
+
+  #footer ul {
+    flex-direction: row;
+  }
+}

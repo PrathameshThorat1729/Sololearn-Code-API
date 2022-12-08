@@ -1,0 +1,505 @@
+<!-----------------------------------------------------------
+-
+- Sololearn Code API - A API to grab best codes from Sololearn
+- Copyright(C) 2022 - 2023 Prathamesh Thorat (thoratprathamesh1729@gmail.com)
+-
+- This software is provided 'as-is', without any express or implied warranty.
+- In no event will the authors be held liable for any damages arising from the use of this software.
+-
+- Permission is granted to anyone to use this software for any purpose,
+- including commercial applications, and to alter it and redistribute it freely,
+- subject to the following restrictions:
+-
+- 1. The origin of this software must not be misrepresented
+- you must not claim that you wrote the original software.
+- If you use this software in a product, an acknowledgment
+- in the product documentation would be appreciated but is not required.
+-
+- 2. Altered source versions must be plainly marked as such,
+- and must not be misrepresented as being the original software.
+-
+- 3. This notice may not be removed or altered from any source distribution.
+-
+------------------------------------------------------------->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{>head_files}}
+</head>
+
+<body>
+    {{>header}}
+    <div id="box">
+        <h1 class="page">Documentation</h1>
+        <aside id="side">
+            <h2>Version 1</h2>
+            <ul>
+                <a href="#page-route">
+                    <li>Page</li>
+                </a>
+                <a href="#lang-route">
+                    <li>Language</li>
+                </a>
+                <a href="#user-route">
+                    <li>User</li>
+                </a>
+                <a href="#id-route">
+                    <li>Code ID</li>
+                </a>
+                <a href="#index-route">
+                    <li>Code Index</li>
+                </a>
+            </ul>
+        </aside>
+        <article id="info_page">
+            <h1 id="start">Endpoints : </h1>
+            <h2 id="page-route">Page :</h2>
+            <div class="endpoint">
+                <div class="url_box">
+                    <div class="get">get</div>
+                    <div class="url">/api/v1/page/:page</div>
+                </div>
+                <p class="end_info">
+                    This endpoint returns top trending code with set of 10 codes, page by page
+                    <br> <br>
+                    Here :page is no of page you want
+                </p>
+                <div class="sample_box">
+                    <h3>Query : </h3>
+                    <div class="query">{domain}/page/2</div>
+                    <h3>Result : </h3>
+                    <pre class="result">[{
+    "title": "smile loading ",
+    "codeURL": "https://code.sololearn.com/WExzXOj1B04t/#",
+    "id": "WExzXOj1B04t",
+    "userName": "ÃKR",
+    "profileURL": "https://www.sololearn.com/Profile/18565967",
+    "profilePicture": "https://www.sololearn.com/Profile/18565967",
+    "date": "16-03-2022",
+    "time": "5:57:50 PM",
+    "codeLang": "web",
+    "upvotes": 127
+},...,
+{
+    "title": "Amazing Muliticolor Fireworks",
+    "codeURL": "https://code.sololearn.com/Wb9AzlVxfsBN/#",
+    "id": "Wb9AzlVxfsBN",
+    "userName": "ZinC",
+    "profileURL": "https://www.sololearn.com/Profile/1057123",
+    "profilePicture": "https://www.sololearn.com/Profile/1057123",
+    "date": "21-07-2016",
+    "time": "6:56:48 PM",
+    "codeLang": "web",
+    "upvotes": 8081
+}]</pre>
+                </div>
+            </div> <br>
+            <div id="scroll_box">
+                <a id="scroller" class="hide" href="#header">To Top</a>
+            </div>
+            <div class="endpoint">
+                <div class="url_box">
+                    <div class="get">get</div>
+                    <div class="url">/api/v1/page/:page/:step</div>
+                </div>
+                <p class="end_info">
+                    This endpoint returns top trending code with set of :step codes, page by page
+                    <br> <br>
+                    Here :page is no of page you want
+                </p>
+                <div class="sample_box">
+                    <h3>Query : </h3>
+                    <div class="query">{domain}/page/2/4</div>
+                    <h3>Result : </h3>
+                    <pre class="result">[{
+    "title": "☠️ dont see this code ☠️",
+    "codeURL": "https://code.sololearn.com/WKgKMU4QpLFe/#",
+    "id": "WKgKMU4QpLFe",
+    "userName": "SwapniL",
+    "profileURL": "https://www.sololearn.com/Profile/4478965",
+    "profilePicture": "https://www.sololearn.com/Profile/4478965",
+    "date": "20-03-2022",
+    "time": "6:14:24 PM",
+    "codeLang": "web",
+    "upvotes": 140
+},...,
+{
+    "title": "Moon-Earth Animation ",
+    "codeURL": "https://code.sololearn.com/WmWt1oZORWXl/#",
+    "id": "WmWt1oZORWXl",
+    "userName": "ÃKR",
+    "profileURL": "https://www.sololearn.com/Profile/18565967",
+    "profilePicture": "https://www.sololearn.com/Profile/18565967",
+    "date": "13-03-2022",
+    "time": "2:06:54 PM",
+    "codeLang": "web",
+    "upvotes": 153
+ }]</pre>
+                </div>
+            </div>
+            <div id="scroll_box">
+                <a id="scroller" class="hide" href="#header">To Top</a>
+            </div>
+            <hr>
+
+            <h2 id="lang-route">Language :</h2>
+            <div class="endpoint">
+                <div class="url_box">
+                    <div class="get">get</div>
+                    <div class="url">/api/v1/lang/:lang</div>
+                </div>
+                <p class="end_info">
+                    This endpoint returns all codes written in :lang languages
+                    <br> <br>
+                    Available Languages are :
+                <ul style="padding-left: 50px;">
+                    <li>c</li>
+                    <li>cpp</li>
+                    <li>cs</li>
+                    <li>go</li>
+                    <li>java</li>
+                    <li>js</li>
+                    <li>kt</li>
+                    <li>node</li>
+                    <li>php</li>
+                    <li>py</li>
+                    <li>r</li>
+                    <li>rb</li>
+                    <li>swift</li>
+                    <li>web</li>
+                </ul>
+                </p>
+                <div class="sample_box">
+                    <h3>Query : </h3>
+                    <div class="query">{domain}/lang/swift</div>
+                    <h3>Result : </h3>
+                    <pre class="result">[{
+    "title": "⚔️Winter is C❄️ming‼️👑",
+    "codeURL": "https://code.sololearn.com/c3ts3qUUo3QE/#swift",
+    "id": "c3ts3qUUo3QE",
+    "userName": "Geovanny Martínez Forero",
+    "profileURL": "https://www.sololearn.com/Profile/11206930",
+    "profilePicture": "https://www.sololearn.com/Profile/11206930",
+    "date": "12-04-2019",
+    "time": "7:20:41 PM",
+    "codeLang": "swift",
+    "upvotes": 293
+},...,
+{
+    "title": "[Challenge] Cube",
+    "codeURL": "https://code.sololearn.com/c7EQ0M4TsPf9/#swift",
+    "id": "c7EQ0M4TsPf9",
+    "userName": "Maisu",
+    "profileURL": "https://www.sololearn.com/Profile/21440143",
+    "profilePicture": "https://www.sololearn.com/Profile/21440143",
+    "date": "18-03-2022",
+    "time": "9:49:12 AM",
+    "codeLang": "swift",
+    "upvotes": 5
+}]</pre>
+                </div>
+            </div>
+            <br>
+            <div id="scroll_box">
+                <a id="scroller" class="hide" href="#header">To Top</a>
+            </div>
+            <div class="endpoint">
+                <div class="url_box">
+                    <div class="get">get</div>
+                    <div class="url">/api/v1/lang/:lang/:max</div>
+                </div>
+                <p class="end_info">
+                    This endpoint returns :max number of codes written in :lang languages
+                    <br> <br>
+                </p>
+                <div class="sample_box">
+                    <h3>Query : </h3>
+                    <div class="query">{domain}/lang/swift/3</div>
+                    <h3>Result : </h3>
+                    <pre class="result">[{
+    "title": "⚔️Winter is C❄️ming‼️👑",
+    "codeURL": "https://code.sololearn.com/c3ts3qUUo3QE/#swift",
+    "id": "c3ts3qUUo3QE",
+    "userName": "Geovanny Martínez Forero",
+    "profileURL": "https://www.sololearn.com/Profile/11206930",
+    "profilePicture": "https://www.sololearn.com/Profile/11206930",
+    "date": "12-04-2019",
+    "time": "7:20:41 PM",
+    "codeLang": "swift",
+    "upvotes": 293
+},...,
+{
+    "title": "Happy Birthday SD",
+    "codeURL": "https://code.sololearn.com/cZCFTddluZI3/#swift",
+    "id": "cZCFTddluZI3",
+    "userName": "Abhiyantā",
+    "profileURL": "https://www.sololearn.com/Profile/16966833",
+    "profilePicture": "https://www.sololearn.com/Profile/16966833",
+    "date": "11-03-2022",
+    "time": "4:05:08 AM",
+    "codeLang": "swift",
+    "upvotes": 13
+}]</pre>
+                </div>
+            </div>
+            <div id="scroll_box">
+                <a id="scroller" class="hide" href="#header">To Top</a>
+            </div>
+            <div class="endpoint">
+                <div class="url_box">
+                    <div class="get">get</div>
+                    <div class="url">/api/v1/lang/:lang/:max/:page</div>
+                </div>
+                <p class="end_info">
+                    This endpoint returns :max number of codes written in :lang languages from :page th set
+                    <br> <br>
+                </p>
+                <div class="sample_box">
+                    <h3>Query : </h3>
+                    <div class="query">{domain}/lang/swift/3/4</div>
+                    <h3>Result : </h3>
+                    <pre class="result">[{
+    "title": "remspa.swift",
+    "codeURL": "https://code.sololearn.com/crVG78u7tDbO/#swift",
+    "id": "crVG78u7tDbO",
+    "userName": "Uni",
+    "profileURL": "https://www.sololearn.com/Profile/8412719",
+    "profilePicture": "https://www.sololearn.com/Profile/8412719",
+    "date": "16-07-2018",
+    "time": "9:33:13 AM",
+    "codeLang": "swift",
+    "upvotes": 38
+},...,
+{
+    "title": "covid Announcement",
+    "codeURL": "https://code.sololearn.com/c9JgIvPd8F8Q/#swift",
+    "id": "c9JgIvPd8F8Q",
+    "userName": "Ona Nixon 🇹🇿 👑",
+    "profileURL": "https://www.sololearn.com/Profile/15826310",
+    "profilePicture": "https://www.sololearn.com/Profile/15826310",
+    "date": "26-05-2020",
+    "time": "8:14:06 PM",
+    "codeLang": "swift",
+    "upvotes": 58
+}]</pre>
+                </div>
+            </div>
+            <div id="scroll_box">
+                <a id="scroller" class="hide" href="#header">To Top</a>
+            </div>
+            <hr>
+
+            <h2 id="user-route">User :</h2>
+            <div class="endpoint">
+                <div class="url_box">
+                    <div class="get">get</div>
+                    <div class="url">/api/v1/user/:name</div>
+                </div>
+                <p class="end_info">
+                    This endpoint returns all codes written in by :name user
+                    <br> <br>
+                    user must be on sololearn
+                </p>
+                <div class="sample_box">
+                    <h3>Query : </h3>
+                    <div class="query">{domain}/user/Burey</div>
+                    <h3>Result : </h3>
+                    <pre class="result">[{
+    "title": "Defend The Castle!",
+    "codeURL": "https://code.sololearn.com/WB2rny04ROP3/#",
+    "id": "WB2rny04ROP3",
+    "userName": "Burey",
+    "profileURL": "https://www.sololearn.com/Profile/197327",
+    "profilePicture": "https://www.sololearn.com/Profile/197327",
+    "date": "12-07-2018",
+    "time": "5:43:06 AM",
+    "codeLang": "web",
+    "upvotes": 5667
+},...,
+{
+    "title": "React.js - Animated Submit Button",
+    "codeURL": "https://code.sololearn.com/Wizp06Jsm1hQ/#",
+    "id": "Wizp06Jsm1hQ",
+    "userName": "Burey",
+    "profileURL": "https://www.sololearn.com/Profile/197327",
+    "profilePicture": "https://www.sololearn.com/Profile/197327",
+    "date": "15-02-2019",
+    "time": "4:32:49 PM",
+    "codeLang": "web",
+    "upvotes": 71
+}]</pre>
+                </div>
+            </div>
+            <br>
+            <div id="scroll_box">
+                <a id="scroller" class="hide" href="#header">To Top</a>
+            </div>
+            <div class="endpoint">
+                <div class="url_box">
+                    <div class="get">get</div>
+                    <div class="url">/api/v1/user/:name/:max</div>
+                </div>
+                <p class="end_info">
+                    This endpoint returns :max number of codes written by :name user
+                    <br> <br>
+                </p>
+                <div class="sample_box">
+                    <h3>Query : </h3>
+                    <div class="query">{domain}/user/Burey/2</div>
+                    <h3>Result : </h3>
+                    <pre class="result">[{
+    "title": "Defend The Castle!",
+    "codeURL": "https://code.sololearn.com/WB2rny04ROP3/#",
+    "id": "WB2rny04ROP3",
+    "userName": "Burey",
+    "profileURL": "https://www.sololearn.com/Profile/197327",
+    "profilePicture": "https://www.sololearn.com/Profile/197327",
+    "date": "12-07-2018",
+    "time": "5:43:06 AM",
+    "codeLang": "web",
+    "upvotes": 5667
+},
+{
+    "title": "World Cup 2018 Live Updates",
+    "codeURL": "https://code.sololearn.com/WZGW3pnr0Xfo/#",
+    "id": "WZGW3pnr0Xfo",
+    "userName": "Burey",
+    "profileURL": "https://www.sololearn.com/Profile/197327",
+    "profilePicture": "https://www.sololearn.com/Profile/197327",
+    "date": "27-06-2018",
+    "time": "7:43:39 PM",
+    "codeLang": "web",
+    "upvotes": 1099
+]}</pre>
+                </div>
+            </div>
+            <div id="scroll_box">
+                <a id="scroller" class="hide" href="#header">To Top</a>
+            </div>
+            <div class="endpoint">
+                <div class="url_box">
+                    <div class="get">get</div>
+                    <div class="url">/api/v1/user/:name/:max/:page</div>
+                </div>
+                <p class="end_info">
+                    This endpoint returns :max number of codes written by :name user from :page th set
+                    <br> <br>
+                </p>
+                <div class="sample_box">
+                    <h3>Query : </h3>
+                    <div class="query">{domain}/user/Burey/3/5</div>
+                    <h3>Result : </h3>
+                    <pre class="result">[{
+    "title": "SoloLearn Polls [Create Polls and Vote]",
+    "codeURL": "https://code.sololearn.com/WQYApZt67VWn/#",
+    "id": "WQYApZt67VWn",
+    "userName": "Burey",
+    "profileURL": "https://www.sololearn.com/Profile/197327",
+    "profilePicture": "https://www.sololearn.com/Profile/197327",
+    "date": "29-04-2017",
+    "time": "9:55:19 AM",
+    "codeLang": "web",
+    "upvotes": 607
+},...,
+{
+    "title": "Dynamic Flexbox Demo",
+    "codeURL": "https://code.sololearn.com/Wqwc2gEQ7sR7/#",
+    "id": "Wqwc2gEQ7sR7",
+    "userName": "Burey",
+    "profileURL": "https://www.sololearn.com/Profile/197327",
+    "profilePicture": "https://www.sololearn.com/Profile/197327",
+    "date": "10-07-2017",
+    "time": "7:03:03 PM",
+    "codeLang": "web",
+    "upvotes": 220
+}]</pre>
+                </div>
+            </div>
+            <div id="scroll_box">
+                <a id="scroller" class="hide" href="#header">To Top</a>
+            </div>
+            <hr>
+
+            <h2 id="id-route">Code ID :</h2>
+            <div class="endpoint">
+                <div class="url_box">
+                    <div class="get">get</div>
+                    <div class="url">/api/v1/id/:id</div>
+                </div>
+                <p class="end_info">
+                    This endpoint returns a code with id :id
+                    <br> <br>
+                </p>
+                <div class="sample_box">
+                    <h3>Query : </h3>
+                    <div class="query">{domain}/id/WQYApZt67VWn</div>
+                    <h3>Result : </h3>
+                    <pre class="result">{
+    "title": "SoloLearn Polls [Create Polls and Vote]",
+    "codeURL": "https://code.sololearn.com/WQYApZt67VWn/#",
+    "id": "WQYApZt67VWn",
+    "userName": "Burey",
+    "profileURL": "https://www.sololearn.com/Profile/197327",
+    "profilePicture": "https://www.sololearn.com/Profile/197327",
+    "date": "29-04-2017",
+    "time": "9:55:19 AM",
+    "codeLang": "web",
+    "upvotes": 607
+}</pre>
+                </div>
+            </div>
+            <div id="scroll_box">
+                <a id="scroller" class="hide" href="#header">To Top</a>
+            </div>
+            <hr>
+            <h2 id="index-route">Code Index :</h2>
+            <div class="endpoint">
+                <div class="url_box">
+                    <div class="get">get</div>
+                    <div class="url">/api/v1/index/:index</div>
+                </div>
+                <p class="end_info">
+                    This endpoint returns a code with index :index
+                    <br> <br>
+                </p>
+                <div class="sample_box">
+                    <h3>Query : </h3>
+                    <div class="query">{domain}/index/465</div>
+                    <h3>Result : </h3>
+                    <pre class="result">{
+    "title": "Virtual Assistant Solo",
+    "codeURL": "https://code.sololearn.com/WN1ECpS6LpAc/#",
+    "id": "WN1ECpS6LpAc",
+    "userName": "Aanisha Bhattacharyya",
+    "profileURL": "https://www.sololearn.com/Profile/9302284",
+    "profilePicture": "https://www.sololearn.com/Profile/9302284",
+    "date": "04-06-2019",
+    "time": "11:33:14 AM",
+    "codeLang": "web",
+    "upvotes": 483
+}</pre>
+                </div>
+                <div id="scroll_box">
+                    <a id="scroller" class="hide" href="#header">To Top</a>
+                </div>
+            </div>
+        </article>
+    </div>
+    {{>footer}}
+
+    <script>
+        window.onload = () => {
+            let query = document.getElementsByClassName("query")
+
+            for (let i = 0; i < query.length; i++) {
+                let item = query.item(i);
+
+                item.textContent = item.textContent.replace("{domain}", window.location.origin + "/api/v1")
+            }
+        }
+    </script>
+</body>
+
+</html>
